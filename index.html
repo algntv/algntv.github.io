@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Александр Игнатьев — начинающий аналитик данных. Python, SQL, Excel, Tableau и DataLens.">
+  <title>Александр Игнатьев — аналитик данных</title>
+  <style>
+    :root {
+      --bg: #f3f1ec;
+      --surface: #fffdf8;
+      --text: #171717;
+      --muted: #696761;
+      --line: #d9d4ca;
+      --accent: #274c5e;
+      --accent-soft: #e3ecef;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(calc(100% - 36px), var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 88px 0 52px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(42px, 8vw, 82px);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(18px, 2.3vw, 24px);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 10px 17px;
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    main { padding: 26px 0 72px; }
+
+    section {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 36px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -.02em;
+    }
+
+    .content p:first-child { margin-top: 0; }
+
+    .content p:last-child { margin-bottom: 0; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      font-size: 14px;
+    }
+
+    .skill-groups {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--surface);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 17px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .project {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--surface);
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .project h3 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 3vw, 34px);
+      letter-spacing: -.035em;
+    }
+
+    .project p {
+      max-width: 720px;
+      color: var(--muted);
+    }
+
+    .project ul {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+
+    .metric {
+      white-space: nowrap;
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .contact {
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+      text-decoration: none;
+    }
+
+    .contact span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 28px 0 44px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      header { padding-top: 58px; }
+
+      section {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .skill-groups,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-top {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">data analyst · санкт-петербург</p>
+      <h1>Александр Игнатьев</h1>
+      <p class="lead">
+        Студент направления «Статистика» СПбПУ. Ищу позицию стажёра или junior data analyst.
+        Работаю с Python, SQL, Excel, Tableau и DataLens, умею превращать данные в понятные выводы.
+      </p>
+      <div class="actions">
+        <a class="button" href="#projects">посмотреть проекты</a>
+        <a class="button secondary" href="mailto:sasha.private@yandex.ru">написать мне</a>
+        <a class="button secondary" href="https://github.com/algntv" target="_blank" rel="noreferrer">github</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>обо мне</h2>
+      <div class="content">
+        <p>
+          Развиваюсь в аналитике данных и ищу первую полноценную работу по специальности.
+          Мне важны реальные задачи, профессиональный рост и возможность влиять на решения с помощью данных.
+          Быстро осваиваю новые инструменты, внимательно отношусь к деталям и не боюсь сложных задач.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>образование</h2>
+      <div class="content">
+        <div class="card">
+          <h3>санкт-петербургский политехнический университет петра великого</h3>
+          <p>ИПМЭиТ · направление «Статистика» · анализ данных в экономике</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>ключевые навыки</h2>
+      <div class="content">
+        <div class="skill-groups">
+          <div class="card">
+            <h3>аналитика и визуализация</h3>
+            <p>Excel, Power Query, сводные таблицы, сложные формулы, Tableau, DataLens, Matplotlib.</p>
+          </div>
+          <div class="card">
+            <h3>программирование</h3>
+            <p>Python, Pandas, NumPy, Jupyter Notebook, Google Colab, базовая работа в Linux.</p>
+          </div>
+          <div class="card">
+            <h3>данные и базы</h3>
+            <p>SQL, PostgreSQL, MySQL, MS Access, очистка, преобразование и исследовательский анализ данных.</p>
+          </div>
+          <div class="card">
+            <h3>дополнительные инструменты</h3>
+            <p>Google Workspace, Figma, Canva, Adobe Photoshop, MS Office.</p>
+          </div>
+        </div>
+
+        <div class="tags" style="margin-top:18px">
+          <span class="tag">аналитическое мышление</span>
+          <span class="tag">внимание к деталям</span>
+          <span class="tag">командная работа</span>
+          <span class="tag">грамотная коммуникация</span>
+          <span class="tag">быстрая обучаемость</span>
+          <span class="tag">ответственность</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>пет-проекты</h2>
+      <div class="content">
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <h3>анализ рынка краткосрочной аренды в берлине</h3>
+              <p>
+                Исследование факторов, связанных со стоимостью объявлений Airbnb.
+                Проект включает подготовку данных, EDA, визуализацию и проверку гипотез.
+              </p>
+            </div>
+            <span class="metric">14 274 объявления</span>
+          </div>
+
+          <ul>
+            <li>очищены и подготовлены исходные данные;</li>
+            <li>проанализированы тип жилья, район, вместимость, срок бронирования и рейтинги;</li>
+            <li>проверены восемь гипотез о факторах ценообразования;</li>
+            <li>сформулированы выводы о ключевых драйверах стоимости.</li>
+          </ul>
+
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Matplotlib</span>
+            <span class="tag">Jupyter Notebook</span>
+          </div>
+
+          <div class="actions">
+            <a class="button" href="https://github.com/algntv/airbnb-berlin-price-drivers" target="_blank" rel="noreferrer">
+              открыть проект на github
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>контакты</h2>
+      <div class="content">
+        <div class="contact-grid">
+          <a class="contact" href="mailto:sasha.private@yandex.ru">
+            <span>email</span>
+            sasha.private@yandex.ru
+          </a>
+          <a class="contact" href="tel:+79992456538">
+            <span>телефон</span>
+            +7 999 245-65-38
+          </a>
+          <a class="contact" href="https://github.com/algntv" target="_blank" rel="noreferrer">
+            <span>github</span>
+            github.com/algntv
+          </a>
+          <div class="contact">
+            <span>локация</span>
+            Санкт-Петербург
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Александр Игнатьев</div>
+  </footer>
+</body>
+</html>
