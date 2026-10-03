@@ -1,260 +1,344 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Александр Игнатьев — начинающий аналитик данных. Python, SQL, Excel, Tableau и DataLens.">
   <title>Александр Игнатьев — аналитик данных</title>
+  <script>
+    try {
+      const theme = localStorage.getItem("portfolio-theme");
+      if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+    } catch (_) {}
+  </script>
   <style>
     :root {
-      --bg: #f3f1ec;
-      --surface: #fffdf8;
-      --text: #171717;
-      --muted: #696761;
-      --line: #d9d4ca;
-      --accent: #274c5e;
-      --accent-soft: #e3ecef;
-      --max: 1080px;
+      color-scheme: light;
+      --bg: #eeefeb;
+      --text: #202629;
+      --muted: #5d696e;
+      --line: #cbd1cf;
+      --accent: #48667c;
+      --max: 1200px;
+      --sans: Arial, Helvetica, sans-serif;
+      --serif: Georgia, "Times New Roman", serif;
+      --mono: "Courier New", Courier, monospace;
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #191d1f;
+      --text: #e4e6e1;
+      --muted: #a4aeb0;
+      --line: #394247;
+      --accent: #adbfcd;
     }
 
     * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
+    html { scroll-padding-top: 32px; }
     body {
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
-
-    a { color: inherit; }
-
-    .wrap {
-      width: min(calc(100% - 36px), var(--max));
-      margin: 0 auto;
+    a { color: inherit; text-underline-offset: .25em; }
+    a:hover { color: var(--accent); }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 6px;
     }
-
-    header {
-      padding: 88px 0 52px;
+    ::selection { background: var(--accent); color: var(--bg); }
+    .wrap { width: min(calc(100% - 112px), var(--max)); margin: 0 auto; }
+    .skip-link {
+      position: absolute;
+      top: 12px;
+      left: 20px;
+      padding: 8px 12px;
+      background: var(--text);
+      color: var(--bg);
+      transform: translateY(-200%);
+      z-index: 2;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 25px 0;
       border-bottom: 1px solid var(--line);
     }
-
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+    .folio, .theme-toggle, .eyebrow, section h2, .project-label,
+    .project-index, .metric-label, .stack-label, .contact span, footer {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: .035em;
     }
-
-    h1 {
-      max-width: 850px;
-      margin: 0;
-      font-size: clamp(42px, 8vw, 82px);
-      line-height: .98;
-      letter-spacing: -.055em;
-    }
-
-    .lead {
-      max-width: 720px;
-      margin: 28px 0 0;
+    .folio { margin: 0; color: var(--muted); }
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      margin: -10px 0;
+      padding: 10px 0 10px 10px;
+      border: 0;
+      background: transparent;
       color: var(--muted);
-      font-size: clamp(18px, 2.3vw, 24px);
+      cursor: pointer;
     }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
+    .theme-toggle::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      box-shadow: inset 6px 0 0 currentColor;
     }
-
+    .theme-toggle:hover { color: var(--text); }
+    header { border-bottom: 1px solid var(--line); }
+    .hero { padding: 54px 0 65px; }
+    .eyebrow { margin: 0 0 34px; color: var(--accent); }
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(68px, 10.4vw, 140px);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -.065em;
+    }
+    h1 span { display: block; }
+    h1 span + span { margin-left: 17%; }
+    .hero-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: end;
+      margin-top: 58px;
+    }
+    .lead {
+      max-width: 560px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px 24px; }
     .button {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 10px 17px;
-      border: 1px solid var(--accent);
-      border-radius: 999px;
-      background: var(--accent);
-      color: white;
-      font-weight: 650;
+      gap: 12px;
+      min-height: 44px;
+      padding: 8px 0;
+      color: var(--text);
+      font-size: 13px;
       text-decoration: none;
-    }
-
-    .button.secondary {
-      background: transparent;
-      color: var(--accent);
-    }
-
-    main { padding: 26px 0 72px; }
-
-    section {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 36px;
-      padding: 48px 0;
       border-bottom: 1px solid var(--line);
     }
-
-    section h2 {
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: -.02em;
+    .button::after { content: "↗"; color: var(--accent); font-size: 16px; }
+    .button[href="#projects"]::after { content: "↓"; }
+    .button:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .button.secondary { color: var(--muted); }
+    .hero-bottom .actions { max-width: 380px; }
+    main { padding: 18px 0 0; }
+    section {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 48px;
+      padding: 52px 0;
+      border-bottom: 1px solid var(--line);
     }
-
+    section h2 { margin: 3px 0 0; color: var(--muted); }
+    .content { min-width: 0; }
     .content p:first-child { margin-top: 0; }
-
     .content p:last-child { margin-bottom: 0; }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
+    .content > p { max-width: 760px; }
+    .card { padding: 0; }
+    .card h3 {
+      max-width: 650px;
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -.025em;
     }
-
-    .tag {
-      padding: 8px 12px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: var(--surface);
-      font-size: 14px;
-    }
-
+    .card p { margin: 0; color: var(--muted); }
     .skill-groups {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      gap: 32px 48px;
     }
-
-    .card {
-      padding: 22px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: var(--surface);
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 17px;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .project {
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: var(--surface);
-    }
-
-    .project + .project {
-      margin-top: 18px;
-    }
-
-    .project-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: flex-start;
-    }
-
-    .project h3 {
-      margin: 0 0 8px;
-      font-size: clamp(24px, 3vw, 34px);
-      letter-spacing: -.035em;
-    }
-
-    .project p {
-      max-width: 720px;
-      color: var(--muted);
-    }
-
-    .project ul {
-      margin: 20px 0;
-      padding-left: 20px;
-    }
-
-    .metric {
-      white-space: nowrap;
-      padding: 8px 11px;
-      border-radius: 999px;
-      background: var(--accent-soft);
+    .skill-groups .card h3 {
+      margin-bottom: 10px;
       color: var(--accent);
-      font-size: 13px;
-      font-weight: 700;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0;
     }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .contact {
-      padding: 16px 18px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--surface);
-      text-decoration: none;
-    }
-
-    .contact span {
-      display: block;
+    .skill-groups .card p { font-size: 14px; line-height: 1.8; }
+    .tags { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 0; }
+    .tag { font-size: 12px; color: var(--muted); }
+    .tag:not(:last-child)::after {
+      content: " / ";
+      display: inline-block;
+      margin: 0 9px;
       color: var(--muted);
-      font-size: 13px;
     }
-
-    footer {
-      padding: 28px 0 44px;
+    .soft-skills { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); }
+    #projects { display: block; padding: 58px 0 0; border-bottom: 0; }
+    #projects > h2 { margin-bottom: 30px; }
+    .project {
+      display: grid;
+      grid-template-columns: 80px minmax(0, 1fr);
+      column-gap: 32px;
+      padding: 42px 0 52px;
+      border-top: 1px solid var(--line);
+    }
+    .project + .project { margin-top: 0; }
+    .project-index { grid-column: 1; grid-row: 1; padding-top: 2px; color: var(--accent); }
+    .project > :not(.project-index) { grid-column: 2; min-width: 0; }
+    .project-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 190px;
+      gap: 54px;
+      align-items: start;
+    }
+    .project-label { margin: 0 0 18px; color: var(--accent); }
+    .project h3 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(32px, 3.75vw, 48px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+    .project p { max-width: 700px; color: var(--muted); }
+    .project-top p:not(.project-label) { margin: 23px 0 0; font-size: 15px; }
+    .metric {
+      display: block;
+      padding-top: 33px;
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -.04em;
+    }
+    .metric-value { display: block; font-size: 51px; white-space: nowrap; }
+    .metric-label { display: block; margin-top: 10px; letter-spacing: 0; }
+    .project ul {
+      max-width: 735px;
+      margin: 29px 0 26px;
+      padding-left: 17px;
       color: var(--muted);
       font-size: 14px;
     }
+    .project li { padding-left: 6px; margin: 7px 0; }
+    .project li::marker { color: var(--accent); font-size: 10px; }
+    strong { color: var(--text); font-weight: 400; }
+    .project .stack-label { margin: 0 0 10px; color: var(--text); }
+    .project .tags { max-width: 780px; }
+    .project .actions { margin-top: 23px; }
+    .contact-section { padding: 36px 0; border-top: 1px solid var(--line); }
+    .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 19px 42px; }
+    .contact { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; text-decoration: none; font-size: 14px; overflow-wrap: anywhere; }
+    .contact span { min-width: 62px; color: var(--muted); }
+    a.contact:hover { text-decoration: underline; }
+    footer { padding: 24px 0 32px; color: var(--muted); }
 
+    @media (min-width: 1440px) {
+      .hero { padding-top: 68px; }
+      .hero-bottom { margin-top: 70px; }
+    }
+    @media (max-width: 1000px) {
+      .wrap { width: calc(100% - 72px); }
+      section { grid-template-columns: 135px minmax(0, 1fr); gap: 32px; }
+      .hero-bottom { gap: 32px; }
+      .project { grid-template-columns: 44px minmax(0, 1fr); column-gap: 24px; }
+      .project-top { grid-template-columns: minmax(0, 1fr) 145px; gap: 28px; }
+      .metric { font-size: 27px; }
+      .metric-value { font-size: 39px; }
+      .contact-grid { column-gap: 24px; }
+    }
     @media (max-width: 760px) {
-      header { padding-top: 58px; }
-
-      section {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .skill-groups,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-top {
-        flex-direction: column;
-      }
+      .wrap { width: calc(100% - 40px); }
+      .masthead { gap: 12px; padding: 18px 0; }
+      .folio, .theme-toggle { font-size: 10px; }
+      .hero { padding: 38px 0 40px; }
+      .eyebrow { margin-bottom: 28px; font-size: 10px; }
+      h1 { font-size: clamp(52px, 12.2vw, 92px); }
+      h1 span + span { margin-left: 9%; }
+      .hero-bottom { grid-template-columns: 1fr; gap: 24px; margin-top: 34px; }
+      .lead { font-size: 15px; }
+      .hero-bottom .lead { grid-row: 1; }
+      .hero-bottom .actions { max-width: none; gap: 8px 20px; }
+      .button { font-size: 12px; gap: 8px; }
+      section { grid-template-columns: 1fr; gap: 22px; padding: 34px 0; }
+      .card h3 { font-size: 21px; }
+      .content > p { font-size: 15px; }
+      .skill-groups { gap: 25px 28px; }
+      .soft-skills { margin-top: 26px; }
+      #projects { padding-top: 38px; }
+      #projects > h2 { margin-bottom: 24px; }
+      .project { grid-template-columns: 28px minmax(0, 1fr); column-gap: 16px; padding: 28px 0 38px; }
+      .project-top { grid-template-columns: 1fr; gap: 22px; }
+      .project-label { font-size: 10px; margin-bottom: 15px; }
+      .project h3 { font-size: clamp(29px, 6.4vw, 42px); }
+      .project-top p:not(.project-label) { margin-top: 18px; font-size: 14px; }
+      .metric { padding: 0; font-size: 26px; }
+      .metric-value { display: inline; font-size: 32px; }
+      .metric-label { display: inline; margin-left: 8px; }
+      .project ul { margin: 22px 0; font-size: 13px; }
+      .project .actions { margin-top: 20px; }
+      .contact-section { padding: 28px 0; }
+      .contact-grid { gap: 16px 28px; }
+      footer { font-size: 10px; }
+    }
+    @media (max-width: 480px) {
+      .skill-groups, .contact-grid { grid-template-columns: 1fr; }
+      .project { grid-template-columns: 24px minmax(0, 1fr); column-gap: 12px; }
+      .project h3 { font-size: 29px; }
+      .project .button { font-size: 11px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">к содержанию</a>
   <header>
     <div class="wrap">
+      <div class="masthead">
+        <p class="folio">портфолио / 2026</p>
+        <button class="theme-toggle" type="button" aria-label="Тёмная тема" aria-pressed="true">тема / <span>тёмная</span></button>
+      </div>
+      <div class="hero">
       <p class="eyebrow">data analyst · санкт-петербург</p>
-      <h1>Александр Игнатьев</h1>
-      <p class="lead">
-        Студент направления «Статистика» СПбПУ. Ищу позицию стажёра или junior data analyst.
-        Работаю с Python, SQL, Excel, Tableau и DataLens, умею превращать данные в понятные выводы.
-      </p>
+      <h1><span>Александр</span> <span>Игнатьев</span></h1>
+      <div class="hero-bottom">
       <div class="actions">
         <a class="button" href="#projects">посмотреть проекты</a>
         <a class="button secondary" href="mailto:sasha.private@yandex.ru">написать мне</a>
         <a class="button secondary" href="https://github.com/algntv" target="_blank" rel="noreferrer">github</a>
       </div>
+      <p class="lead">
+        Студент направления «Статистика» СПбПУ. Ищу позицию стажёра или junior data analyst.
+        Работаю с Python, SQL, Excel, Tableau и DataLens, умею превращать данные в понятные выводы.
+      </p>
+      </div>
+      </div>
     </div>
   </header>
 
-  <main class="wrap">
+  <main class="wrap" id="main">
     <section>
       <h2>обо мне</h2>
       <div class="content">
@@ -298,7 +382,7 @@
           </div>
         </div>
 
-        <div class="tags" style="margin-top:18px">
+        <div class="tags soft-skills">
           <span class="tag">аналитическое мышление</span>
           <span class="tag">внимание к деталям</span>
           <span class="tag">командная работа</span>
@@ -313,15 +397,17 @@
       <h2>проекты</h2>
       <div class="content">
         <article class="project">
+          <span class="project-index" aria-hidden="true">01</span>
           <div class="project-top">
             <div>
-              <h3>анализ рынка краткосрочной аренды в берлине · pet-project</h3>
+              <p class="project-label">pet-project</p>
+              <h3>анализ рынка краткосрочной аренды в берлине</h3>
               <p>
                 Самостоятельный аналитический проект по исследованию факторов,
                 связанных со стоимостью объявлений Airbnb.
               </p>
             </div>
-            <span class="metric">14 274 объявления</span>
+            <span class="metric"><span class="metric-value">14 274</span> <span class="metric-label">объявления</span></span>
           </div>
 
           <ul>
@@ -331,7 +417,7 @@
             <li>проверил восемь аналитических гипотез и сформулировал выводы о драйверах стоимости.</li>
           </ul>
 
-          <p><strong>стек:</strong></p>
+          <p class="stack-label">стек:</p>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">Pandas</span>
@@ -351,9 +437,11 @@
         </article>
 
         <article class="project">
+          <span class="project-index" aria-hidden="true">02</span>
           <div class="project-top">
             <div>
-              <h3>marketing measurement system · хакатон</h3>
+              <p class="project-label">хакатон</p>
+              <h3>marketing measurement system</h3>
               <p>
                 Хакатон «Поступашек» · команда 5 человек · около 24 часов.
                 MVP системы измерения эффективности маркетинга: от рекламного размещения
@@ -371,7 +459,7 @@
             <li><strong>мой вклад:</strong> участие в проработке аналитической логики решения и подхода к анализу и классификации данных.</li>
           </ul>
 
-          <p><strong>стек проекта:</strong></p>
+          <p class="stack-label">стек проекта:</p>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">Pandas</span>
@@ -392,9 +480,11 @@
         </article>
 
         <article class="project">
+          <span class="project-index" aria-hidden="true">03</span>
           <div class="project-top">
             <div>
-              <h3>delay prediction platform · хакатон</h3>
+              <p class="project-label">хакатон</p>
+              <h3>delay prediction platform</h3>
               <p>
                 Хакатон Московского транспорта · команда 5 человек · 3 дня.
                 Работающий прототип системы прогнозирования задержек автобусов
@@ -411,7 +501,7 @@
             <li><strong>мой вклад:</strong> финальное code review, проверка прохождения тестов и end-to-end работоспособности проекта перед сдачей.</li>
           </ul>
 
-          <p><strong>стек проекта:</strong></p>
+          <p class="stack-label">стек проекта:</p>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">Docker</span>
@@ -432,7 +522,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="contact-section">
       <h2>контакты</h2>
       <div class="content">
         <div class="contact-grid">
@@ -460,5 +550,20 @@
   <footer>
     <div class="wrap">© 2026 Александр Игнатьев</div>
   </footer>
+  <script>
+    const themeButton = document.querySelector(".theme-toggle");
+    function updateThemeButton() {
+      const dark = document.documentElement.dataset.theme === "dark";
+      themeButton.setAttribute("aria-pressed", String(dark));
+      themeButton.querySelector("span").textContent = dark ? "тёмная" : "светлая";
+    }
+    updateThemeButton();
+    themeButton.addEventListener("click", () => {
+      const theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = theme;
+      updateThemeButton();
+      try { localStorage.setItem("portfolio-theme", theme); } catch (_) {}
+    });
+  </script>
 </body>
 </html>
