@@ -155,6 +155,10 @@
       background: var(--surface);
     }
 
+    .project + .project {
+      margin-top: 18px;
+    }
+
     .project-top {
       display: flex;
       justify-content: space-between;
@@ -306,37 +310,121 @@
     </section>
 
     <section id="projects">
-      <h2>пет-проекты</h2>
+      <h2>проекты</h2>
       <div class="content">
         <article class="project">
           <div class="project-top">
             <div>
               <h3>анализ рынка краткосрочной аренды в берлине</h3>
               <p>
-                Исследование факторов, связанных со стоимостью объявлений Airbnb.
-                Проект включает подготовку данных, EDA, визуализацию и проверку гипотез.
+                Самостоятельный аналитический проект по исследованию факторов,
+                связанных со стоимостью объявлений Airbnb.
               </p>
             </div>
             <span class="metric">14 274 объявления</span>
           </div>
 
           <ul>
-            <li>очищены и подготовлены исходные данные;</li>
-            <li>проанализированы тип жилья, район, вместимость, срок бронирования и рейтинги;</li>
-            <li>проверены восемь гипотез о факторах ценообразования;</li>
-            <li>сформулированы выводы о ключевых драйверах стоимости.</li>
+            <li>очистил и подготовил исходные данные;</li>
+            <li>провёл EDA и визуализацию ключевых характеристик рынка;</li>
+            <li>исследовал влияние района, типа жилья, вместимости, рейтинга и других факторов на цену;</li>
+            <li>проверил восемь аналитических гипотез и сформулировал выводы о драйверах стоимости.</li>
           </ul>
 
+          <p><strong>стек:</strong></p>
           <div class="tags">
             <span class="tag">Python</span>
             <span class="tag">Pandas</span>
             <span class="tag">NumPy</span>
             <span class="tag">Matplotlib</span>
             <span class="tag">Jupyter Notebook</span>
+            <span class="tag">EDA</span>
+            <span class="tag">очистка данных</span>
+            <span class="tag">визуализация</span>
           </div>
 
           <div class="actions">
             <a class="button" href="https://github.com/algntv/airbnb-berlin-price-drivers" target="_blank" rel="noreferrer">
+              открыть проект на github
+            </a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <h3>marketing measurement system</h3>
+              <p>
+                Хакатон «Поступашек» · команда 5 человек · около 24 часов.
+                MVP системы измерения эффективности маркетинга: от рекламного размещения
+                и пользовательского касания до заявки, оплаты и ROMI.
+              </p>
+            </div>
+            <span class="metric">рабочий MVP</span>
+          </div>
+
+          <ul>
+            <li>Telegram-бот создаёт tracking-ссылки, фиксирует касания и заявки;</li>
+            <li>система считает воронку, attributed revenue, CPA и ROMI по нескольким моделям атрибуции;</li>
+            <li>аналитическая часть включает EDA 628 заказов, 606 покупателей и ≈5,9 млн ₽ выручки;</li>
+            <li>Telegram-публикации классифицируются rule-based алгоритмом по типу контента;</li>
+            <li><strong>мой вклад:</strong> участие в проработке аналитической логики решения и подхода к анализу и классификации данных.</li>
+          </ul>
+
+          <p><strong>стек проекта:</strong></p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">Telegram Bot</span>
+            <span class="tag">EDA</span>
+            <span class="tag">атрибуция</span>
+            <span class="tag">ROMI</span>
+            <span class="tag">классификация</span>
+            <span class="tag">маркетинговая аналитика</span>
+          </div>
+
+          <div class="actions">
+            <a class="button" href="https://github.com/valentinesvev/marketing_attribution_system" target="_blank" rel="noreferrer">
+              открыть проект на github
+            </a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-top">
+            <div>
+              <h3>delay prediction platform</h3>
+              <p>
+                Хакатон Московского транспорта · команда 5 человек · 3 дня.
+                Работающий прототип системы прогнозирования задержек автобусов
+                на остановках на 10–15 минут вперёд.
+              </p>
+            </div>
+            <span class="metric">прогноз 10–15 мин</span>
+          </div>
+
+          <ul>
+            <li>платформа принимает потоковую телеметрию и показывает текущие и прогнозные задержки в интерфейсе диспетчера;</li>
+            <li>реализованы live- и historical-режимы, ML-пайплайн, FastAPI backend и отдельный analytics worker;</li>
+            <li>решение контейнеризировано через Docker Compose и покрыто автоматическими тестами;</li>
+            <li><strong>мой вклад:</strong> финальное code review, проверка прохождения тестов и end-to-end работоспособности проекта перед сдачей.</li>
+          </ul>
+
+          <p><strong>стек проекта:</strong></p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Docker</span>
+            <span class="tag">FastAPI</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">SQLite</span>
+            <span class="tag">ML</span>
+            <span class="tag">тестирование</span>
+            <span class="tag">Code Review</span>
+          </div>
+
+          <div class="actions">
+            <a class="button" href="https://github.com/valentinesvev/delay_prediction_platform" target="_blank" rel="noreferrer">
               открыть проект на github
             </a>
           </div>
