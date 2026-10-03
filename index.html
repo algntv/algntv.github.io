@@ -310,6 +310,101 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; }
     }
+
+    /* Editorial compositions and project illustrations. */
+    :root { --panel: #dce3e3; --art-line: #a8b9c0; --art-fill: #d0dcdf; }
+    :root[data-theme="dark"] { --panel: #242e33; --art-line: #4d616c; --art-fill: #2e3e47; }
+    .masthead { border-bottom-color: var(--text); }
+    .folio::before {
+      content: "АИ.";
+      margin-right: 20px;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 25px;
+      line-height: 1;
+      letter-spacing: -.08em;
+      color: var(--text);
+    }
+    .hero { padding-top: 44px; padding-bottom: 46px; }
+    .eyebrow { margin-bottom: 30px; }
+    .hero-stage { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 36px; align-items: center; }
+    h1 { font-size: clamp(68px, 9.5vw, 128px); letter-spacing: -.06em; }
+    h1 span + span { margin-left: 10%; font-style: italic; color: var(--accent); }
+    .hero-art { color: var(--accent); }
+    .hero-art svg { display: block; width: 100%; }
+    .art-line { stroke: var(--art-line); stroke-width: 1; }
+    .art-accent { stroke: var(--accent); stroke-width: 1; }
+    .art-fill { fill: var(--art-fill); }
+    .art-solid { fill: var(--accent); }
+    .art-caption { display: flex; justify-content: space-between; padding-top: 10px; font: 10px/1.5 var(--mono); color: var(--muted); }
+    .project-index-nav { display: flex; flex-wrap: wrap; gap: 0 32px; margin-top: 38px; padding-top: 15px; border-top: 1px solid var(--line); }
+    .project-index-nav a { display: inline-flex; gap: 12px; align-items: center; min-height: 44px; font: 12px/1.5 var(--mono); text-decoration: none; color: var(--muted); }
+    .project-index-nav a > span:first-child { color: var(--accent); }
+    .project-index-nav a:hover { color: var(--text); }
+    .index-arrow { color: var(--accent); }
+    .hero-bottom { margin-top: 27px; align-items: start; }
+    .about-section .content > p { font-family: var(--serif); font-size: 25px; line-height: 1.5; letter-spacing: -.02em; }
+    section:not(#projects) h2::before { content: ""; display: inline-block; width: 4px; height: 4px; margin-right: 10px; vertical-align: middle; background: var(--accent); }
+    .projects-heading { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 25px; }
+    .projects-heading h2 { margin: 0; color: var(--text); font-family: var(--serif); font-size: 46px; letter-spacing: -.04em; line-height: 1.1; }
+    .projects-count { color: var(--muted); font: 11px/1.5 var(--mono); }
+    .project { grid-template-columns: 92px minmax(0, 1fr); column-gap: 32px; scroll-margin-top: 32px; }
+    .project-index { padding-top: 14px; font-family: var(--serif); font-size: 76px; line-height: 1; letter-spacing: -.08em; color: var(--muted); }
+    .project-top { grid-template-columns: minmax(0, 1fr) 220px; gap: 46px; }
+    .project h3 { font-size: clamp(32px, 3.4vw, 45px); }
+    .project-aside { border-left: 2px solid var(--accent); padding: 20px; background: var(--panel); }
+    .project-aside .metric { padding: 0; font-size: 28px; }
+    .project-aside .metric-value { font-size: 45px; }
+    .project-aside .metric-label { margin-top: 8px; }
+    .project-aside svg { display: block; width: 100%; margin-top: 27px; }
+    .skill-groups .card { border-top: 1px solid var(--line); padding-top: 15px; }
+    .contact-section { border-top-color: var(--text); }
+
+    @media (max-width: 1100px) {
+      .hero-stage { grid-template-columns: minmax(0, 1fr) 210px; gap: 24px; }
+      h1 { font-size: clamp(68px, 8.5vw, 106px); }
+      .project { grid-template-columns: 64px minmax(0, 1fr); column-gap: 24px; }
+      .project-index { font-size: 58px; }
+      .project-top { grid-template-columns: minmax(0, 1fr) 180px; gap: 28px; }
+      .project-aside { padding: 16px; }
+      .project-aside .metric-value { font-size: 36px; }
+    }
+    @media (max-width: 900px) {
+      .hero-stage { display: block; }
+      .hero-art { display: none; }
+      h1 { font-size: clamp(68px, 10.4vw, 100px); }
+      .project-top { grid-template-columns: 1fr; }
+      .project-aside { display: flex; gap: 20px; justify-content: space-between; align-items: center; max-width: 480px; padding: 14px 20px; }
+      .project-aside .metric { max-width: 220px; font-size: 26px; }
+      .project-aside svg { width: 110px; flex-shrink: 0; margin: 0; }
+      .project-aside .metric-label { display: block; margin-left: 0; }
+    }
+    @media (max-width: 760px) {
+      .hero { padding: 32px 0; }
+      h1 { font-size: clamp(52px, 12.2vw, 92px); }
+      h1 span + span { margin-left: 8%; }
+      .folio::before { margin-right: 12px; font-size: 22px; }
+      .project-index-nav { gap: 0 20px; margin-top: 26px; padding-top: 7px; }
+      .project-index-nav a { font-size: 10px; gap: 8px; min-height: 38px; }
+      .hero-bottom { margin-top: 22px; gap: 20px; }
+      .about-section .content > p { font-size: 21px; }
+      .projects-heading { padding-bottom: 22px; }
+      .projects-heading h2 { font-size: 36px; }
+      .project { grid-template-columns: 38px minmax(0, 1fr); column-gap: 14px; }
+      .project-index { font-size: 36px; padding-top: 25px; }
+      .project h3 { font-size: clamp(29px, 6.4vw, 42px); }
+      .project-aside { gap: 12px; padding: 12px 14px; }
+      .project-aside .metric { font-size: 23px; }
+      .project-aside .metric-value { font-size: 32px; }
+      .project-aside svg { width: 88px; }
+    }
+    @media (max-width: 480px) {
+      .project { grid-template-columns: 1fr; }
+      .project-index { grid-column: 1; grid-row: auto; padding: 0; margin-bottom: 19px; font-size: 40px; }
+      .project > :not(.project-index) { grid-column: 1; }
+      .project-aside svg { width: 92px; }
+      .project h3 { font-size: 30px; }
+    }
   </style>
 </head>
 <body>
@@ -322,7 +417,27 @@
       </div>
       <div class="hero">
       <p class="eyebrow">data analyst · Санкт-Петербург</p>
-      <h1><span>Александр</span> <span>Игнатьев</span></h1>
+      <div class="hero-stage">
+        <h1><span>Александр</span> <span>Игнатьев</span></h1>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 280 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="art-line" d="M18 24H262M18 266H262M36 8V282M244 8V282"/>
+          <path class="art-fill" d="M66 52H214V238H66z"/>
+          <path class="art-line" d="M66 52H214V238H66zM66 96H214M66 194H214M102 52V238M178 52V238"/>
+          <circle class="art-accent" cx="140" cy="145" r="63"/>
+          <circle class="art-line" cx="140" cy="145" r="37"/>
+          <path class="art-accent" d="M50 145H230M140 35V255"/>
+          <path class="art-solid" d="M135 140H145V150H135z"/>
+          <path class="art-line" d="M14 20V28M10 24H18M266 262V270M262 266H270"/>
+        </svg>
+        <div class="art-caption"><span>данные → выводы</span><span>АИ / 26</span></div>
+      </div>
+      </div>
+      <nav class="project-index-nav" aria-label="избранные проекты">
+        <a href="#airbnb"><span>01</span> Airbnb / Берлин <span class="index-arrow" aria-hidden="true">↗</span></a>
+        <a href="#marketing"><span>02</span> маркетинг <span class="index-arrow" aria-hidden="true">↗</span></a>
+        <a href="#transport"><span>03</span> транспорт <span class="index-arrow" aria-hidden="true">↗</span></a>
+      </nav>
       <div class="hero-bottom">
       <div class="actions">
         <a class="button" href="#projects">посмотреть проекты</a>
@@ -339,7 +454,7 @@
   </header>
 
   <main class="wrap" id="main">
-    <section>
+    <section class="about-section">
       <h2>обо мне</h2>
       <div class="content">
         <p>
@@ -394,9 +509,12 @@
     </section>
 
     <section id="projects">
-      <h2>проекты</h2>
+      <div class="projects-heading">
+        <h2>проекты</h2>
+        <span class="projects-count" aria-hidden="true">01 — 03</span>
+      </div>
       <div class="content">
-        <article class="project">
+        <article class="project" id="airbnb">
           <span class="project-index" aria-hidden="true">01</span>
           <div class="project-top">
             <div>
@@ -407,7 +525,15 @@
                 связанных со стоимостью объявлений Airbnb.
               </p>
             </div>
-            <span class="metric"><span class="metric-value">14 274</span> <span class="metric-label">объявления</span></span>
+            <div class="project-aside">
+              <span class="metric"><span class="metric-value">14 274</span> <span class="metric-label">объявления</span></span>
+              <svg viewBox="0 0 210 118" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path class="art-fill" d="M24 30H82V110H24zM89 10H147V110H89z"/>
+                <path class="art-line" d="M24 30H82V110H24zM89 10H147V110H89zM154 48H190V110H154zM12 110H200"/>
+                <path class="art-accent" d="M37 45H49V57H37zM58 45H70V57H58zM37 70H49V82H37zM58 70H70V82H58zM102 25H114V37H102zM123 25H135V37H123zM102 50H114V62H102zM123 50H135V62H123zM102 75H114V87H102zM123 75H135V87H123z"/>
+                <path class="art-line" d="M166 63H178M166 80H178M43 98H64M106 103H130"/>
+              </svg>
+            </div>
           </div>
 
           <ul>
@@ -436,7 +562,7 @@
           </div>
         </article>
 
-        <article class="project">
+        <article class="project" id="marketing">
           <span class="project-index" aria-hidden="true">02</span>
           <div class="project-top">
             <div>
@@ -448,7 +574,18 @@
                 и пользовательского касания до заявки, оплаты и ROMI.
               </p>
             </div>
-            <span class="metric">рабочий MVP</span>
+            <div class="project-aside">
+              <span class="metric">рабочий MVP</span>
+              <svg viewBox="0 0 210 118" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path class="art-line" d="M18 30H74V60H131M18 89H74V60M18 60H131"/>
+                <path class="art-accent" d="M131 60H187M131 60V18H161M131 60V102H161"/>
+                <circle class="art-fill" cx="131" cy="60" r="23"/>
+                <circle class="art-accent" cx="131" cy="60" r="23"/>
+                <path class="art-solid" d="M126 55H136V65H126z"/>
+                <circle class="art-line" cx="18" cy="30" r="5"/><circle class="art-line" cx="18" cy="60" r="5"/><circle class="art-line" cx="18" cy="89" r="5"/>
+                <path class="art-accent" d="M182 55H192V65H182zM161 13H171V23H161zM161 97H171V107H161z"/>
+              </svg>
+            </div>
           </div>
 
           <ul>
@@ -479,7 +616,7 @@
           </div>
         </article>
 
-        <article class="project">
+        <article class="project" id="transport">
           <span class="project-index" aria-hidden="true">03</span>
           <div class="project-top">
             <div>
@@ -491,7 +628,16 @@
                 на остановках на 10–15 минут вперёд.
               </p>
             </div>
-            <span class="metric">прогноз 10–15 мин</span>
+            <div class="project-aside">
+              <span class="metric">прогноз 10–15 мин</span>
+              <svg viewBox="0 0 210 118" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path class="art-line" d="M16 12V108M68 12V108M120 12V108M172 12V108M8 30H202M8 60H202M8 90H202"/>
+                <path class="art-accent" d="M16 90H68V60H120V30H188"/>
+                <path class="art-line" d="M16 104H82V74H134V44H188"/>
+                <circle class="art-solid" cx="16" cy="90" r="3"/><circle class="art-solid" cx="68" cy="60" r="3"/><circle class="art-solid" cx="120" cy="30" r="3"/>
+                <circle class="art-accent" cx="188" cy="30" r="8"/><circle class="art-accent" cx="188" cy="30" r="15"/>
+              </svg>
+            </div>
           </div>
 
           <ul>
