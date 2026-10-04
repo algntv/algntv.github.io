@@ -7,6 +7,17 @@
   <title>Александр Игнатьев — аналитик данных</title>
   <link rel="preload" href="assets/fonts/IBMPlexMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="assets/archive.css">
+  <style>
+    .work-label { background: #ff7208; color: #111; padding: 23px 20px 18px; margin-bottom: 20px; font-family: var(--mono); }
+    .work-label-heading { margin: 0 0 19px; font-size: 11px; font-weight: 600; letter-spacing: .02em; }
+    .work-label a { display: block; padding: 11px 0; border-top: 1px solid rgba(17,17,17,.28); color: #111; text-decoration: none; }
+    .work-label a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .work-label a:focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+    .work-label a span { display: block; font-size: 11px; line-height: 1.5; }
+    .work-label a small { display: block; margin-top: 3px; font-size: 9px; line-height: 1.6; }
+    .work-label-footer { margin: 15px 0 0; font-size: 8px; line-height: 1.5; }
+    @media (max-width: 760px) { .hero-file { width: min(100%,280px); } }
+  </style>
 </head>
 <body>
   <div class="folio-ruler" aria-hidden="true"><img src="assets/graphics/ruler.svg" alt="" width="38" height="616"></div>
@@ -35,10 +46,13 @@
           <p class="hero-role"><span class="text-highlight">data analyst</span> / statistics student</p>
         </div>
         <aside class="hero-file" aria-label="краткая информация">
-          <figure class="print-plate" aria-hidden="true">
-            <img src="assets/graphics/print-01.png" alt="" width="640" height="640" decoding="async">
-            <figcaption><span class="plate-code">[print_01]</span><span>algntv / personal archive</span></figcaption>
-          </figure>
+          <nav class="work-label" aria-label="Кейсы проектов">
+            <p class="work-label-heading">SELECTED WORK / 03</p>
+            <a href="cases/airbnb-berlin.html"><span>[01] AIRBNB BERLIN</span><small>исследование рынка / EDA</small></a>
+            <a href="cases/marketing-measurement.html"><span>[02] MARKETING</span><small>атрибуция / ROMI</small></a>
+            <a href="cases/delay-prediction.html"><span>[03] TRANSPORT</span><small>прогноз задержек / ML</small></a>
+            <p class="work-label-footer">algntv / project archive ↗</p>
+          </nav>
           <dl>
             <dt>location</dt><dd>Санкт-Петербург</dd>
             <dt>education</dt><dd>СПбПУ / 3 курс</dd>
