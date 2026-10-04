@@ -367,3 +367,49 @@ section { scroll-margin-top: 56px; }
   .evidence-grid { grid-template-columns: 1fr; }
   .lead,.record-summary,.skill-group p,.case-content { font-size: 15px; }
 }
+
+/* Clear resume hierarchy; archive lettering stays in labels and tools. */
+h1 { font-size: clamp(64px, 8vw, 110px); }
+.hero { padding-top: 30px; }
+.hero-foot { display: block; margin-top: 30px; }
+.hero-intro { max-width: 760px; }
+.job-target { margin: 0 0 10px; font: 21px/1.45 var(--sans); }
+.job-target strong { font-weight: 600; }
+.lead { font: 17px/1.6 var(--sans); color: var(--ink); }
+.hero-stack { margin: 12px 0 0; color: var(--accent); font: 14px/1.7 var(--mono); }
+.quick-links { margin-top: 18px; }
+.quick-links .text-link { font-size: 14px; }
+.record { grid-template-columns: 28px 170px minmax(0,1fr) 176px; }
+.record-summary, .record-contribution, .record-result { font: 17px/1.6 var(--sans); max-width: 68ch; }
+.record-summary { color: #41474a; margin: 16px 0 12px; }
+.record-contribution { margin: 0 0 12px; }
+.record-result { margin: 0 0 18px; }
+.record-contribution strong, .record-result strong { font-weight: 600; }
+.tag { font-size: 12px; }
+.record-side .text-link { font-size: 13px; min-height: 44px; }
+.record-side .case-link { padding: 10px 12px; background: var(--highlight); color: var(--ink); font: 600 15px/1.4 var(--sans); }
+.record-side .case-link:hover { background: var(--band); }
+.case-content { font: 17px/1.65 var(--sans); }
+.case-content .source-links, .case-content .sql-example pre { font-family: var(--mono); }
+@media (min-width:761px) and (max-width:1100px) {
+  .record { grid-template-columns: 24px 120px minmax(0,1fr); gap: 20px; }
+  .record-side { grid-column: 3; flex-direction: row; flex-wrap: wrap; gap: 12px 20px; }
+}
+@media (max-width:760px) {
+  h1 { font-size: clamp(49px,12vw,90px); }
+  .hero { padding-top: 24px; }
+  .hero-foot { margin-top: 24px; }
+  .job-target { font-size: 20px; }
+  .lead { font-size: 16px; }
+  .hero-stack { font-size: 13px; }
+  .hero-file { width: 100%; align-self: stretch; margin-top: 20px; }
+  .hero-file .work-label { padding: 14px 16px 8px; }
+  .work-label-heading { margin-bottom: 10px; }
+  .work-label a { padding: 9px 0; min-height: 44px; }
+  .work-label a span { font-size: 12px; }
+  .work-label a small { display: none; }
+  .record { grid-template-columns: 24px minmax(0,1fr); }
+  .record-summary, .record-contribution, .record-result, .case-content { font-size: 16px; }
+  .record-side { grid-row: 2; }
+  .record-preview { grid-row: 3; }
+}

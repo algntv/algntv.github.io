@@ -16,7 +16,7 @@
     .work-label a span { display: block; font-size: 11px; line-height: 1.5; }
     .work-label a small { display: block; margin-top: 3px; font-size: 9px; line-height: 1.6; }
     .work-label-footer { margin: 15px 0 0; font-size: 8px; line-height: 1.5; }
-    @media (max-width: 760px) { .hero-file { width: min(100%,280px); } }
+    @media (max-width: 760px) { .work-label-heading { margin-bottom: 10px; } .work-label a { padding: 9px 0; min-height: 44px; } .work-label a span { font-size: 12px; } .work-label a small { display: none; } }
   </style>
 </head>
 <body>
@@ -25,21 +25,20 @@
   <div class="pack-band">
     <div class="wrap pack-inner">
       <a class="pack-mark" href="index.html" aria-label="Александр Игнатьев — главная">algntv<span class="pack-copyright" aria-hidden="true">©</span></a>
-      <span class="pack-code">data analyst / statistics<br>index_03 / 2024 → now</span>
+      <span class="pack-code">data analyst / statistics<br>2024 → now</span>
     </div>
   </div>
   <header class="wrap masthead">
-    <p class="archive-id"><a href="index.html">algntv / personal archive</a><img class="header-mark" src="assets/graphics/header-mark-red.png" alt="" aria-hidden="true" width="1784" height="882"></p>
+    <p class="archive-id"><a href="index.html">algntv / portfolio</a><img class="header-mark" src="assets/graphics/header-mark-red.png" alt="" aria-hidden="true" width="1784" height="882"></p>
     <nav class="masthead-tools" aria-label="навигация">
-      <a class="index-link" href="#projects">[work]</a>
-      <a href="#contacts">[contact]</a>
+      <a class="index-link" href="#projects">[проекты]</a>
+      <a href="#contacts">[контакты]</a>
       <span class="meta updated">updated / 04.10.26</span>
     </nav>
   </header>
   <main class="wrap" id="main">
     <div class="hero">
       <div class="winter-photo" aria-hidden="true"><img src="assets/graphics/winter-photo.png" alt="" width="447" height="447" decoding="async"></div>
-      <p class="meta hero-label">index / data analytics / statistics</p>
       <div class="hero-grid">
         <div>
           <h1 lang="en"><span>Alexander</span> <span>Ignatiev</span></h1>
@@ -51,22 +50,18 @@
             <a href="cases/airbnb-berlin.html"><span>[01] AIRBNB BERLIN</span><small>исследование рынка / EDA</small></a>
             <a href="cases/marketing-measurement.html"><span>[02] MARKETING ANALYSIS</span><small>атрибуция / ROMI</small></a>
             <a href="cases/delay-prediction.html"><span>[03] ХАКАТОН МОСТРАНСПОРТА</span><small>прогноз задержек / ML</small></a>
-            <p class="work-label-footer">algntv / project archive ↗</p>
           </nav>
           <dl>
             <dt>location</dt><dd>Санкт-Петербург</dd>
             <dt>education</dt><dd>СПбПУ / 3 курс</dd>
-            <dt>projects</dt><dd class="file-total">03</dd>
           </dl>
-          <nav class="file-map" aria-label="индекс проектов"><a href="#airbnb">[01]</a> <a href="#marketing">[02]</a> <a href="#transport">[03]</a></nav>
         </aside>
       </div>
       <div class="hero-foot">
-        <p class="lead">студент статистики в СПбПУ. работаю с Python, SQL, Excel, Tableau, DataLens. ищу позицию intern / junior data analyst.</p>
-        <p class="availability">available for internship / junior roles</p>
+        <div class="hero-intro"><p class="job-target">Ищу позицию <strong>intern / junior data analyst</strong></p><p class="lead">Студент статистики в СПбПУ. Превращаю данные в понятные выводы.</p><p class="hero-stack">Python / SQL / Excel / Tableau / DataLens</p></div>
       </div>
       <nav class="quick-links" aria-label="быстрые ссылки">
-        <a class="text-link" href="#projects">projects <span class="arrow" aria-hidden="true">↓</span></a>
+        <a class="text-link" href="#projects">проекты <span class="arrow" aria-hidden="true">↓</span></a>
         <a class="text-link" href="https://github.com/algntv" target="_blank" rel="noreferrer">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
         <a class="text-link" href="mailto:sasha.private@yandex.ru">написать мне <span class="arrow" aria-hidden="true">↗</span></a>
       </nav>
@@ -78,7 +73,7 @@
     </div>
 
     <section id="projects">
-      <div class="section-head"><h2><span class="section-number">01 /</span>проекты</h2><span class="meta">projects / 03 files</span></div>
+      <div class="section-head"><h2><span class="section-number">01 /</span>проекты</h2><span class="meta">3 проекта</span></div>
       <article class="record" id="airbnb">
         <span class="meta record-index" aria-hidden="true">01</span>
         <a class="record-preview" href="cases/airbnb-berlin.html" aria-label="открыть case_01: анализ рынка краткосрочной аренды в Берлине">
@@ -87,23 +82,12 @@
         </a>
         <div class="record-body">
           <h3><a class="record-title" href="cases/airbnb-berlin.html">анализ рынка краткосрочной аренды в Берлине</a> <span class="record-type"><span class="type-dot" aria-hidden="true">· </span>pet-project</span></h3>
-          <p class="record-summary">самостоятельный аналитический проект по исследованию факторов,
-                связанных со стоимостью объявлений Airbnb.</p>
-          <p class="record-contribution"><strong>мой вклад:</strong> очистка данных, сравнение групп, корреляционный анализ и визуализация.</p><p class="stack-label">инструменты</p><div class="tags"><span class="tag">Python</span>
-<span class="tag">Pandas</span>
-<span class="tag">NumPy</span>
-<span class="tag">Matplotlib</span>
-<span class="tag">Seaborn</span>
-<span class="tag">Jupyter Notebook</span>
-<span class="tag">EDA</span>
-<span class="tag">очистка данных</span>
-<span class="tag">визуализация</span></div>
-          <p class="record-file">file_01 / airbnb-berlin.html</p>
+          <p class="record-summary">Исследование связи цены аренды Airbnb в Берлине с типом жилья, районом и характеристиками объявления.</p>
+          <p class="record-contribution"><strong>Мой вклад:</strong> Обработал данные, сравнил группы, провёл корреляционный анализ и визуализировал результаты.</p><p class="record-result"><strong>Результат:</strong> Наиболее сильная из рассмотренных корреляций цены — с вместимостью жилья (r = 0,59).</p><p class="stack-label">инструменты</p><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span></div>
         </div>
         <div class="record-side">
-          <p>14 274 объявления</p>
-          <a class="text-link" href="cases/airbnb-berlin.html">[open case <span class="arrow" aria-hidden="true">↗</span>]</a>
-          <a class="text-link" href="https://github.com/algntv/airbnb-berlin-price-drivers" target="_blank" rel="noreferrer">repository <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="text-link case-link" href="cases/airbnb-berlin.html">Подробнее о проекте <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://github.com/algntv/airbnb-berlin-price-drivers" target="_blank" rel="noreferrer">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
         </div>
       </article>
       <article class="record" id="marketing">
@@ -114,24 +98,12 @@
         </a>
         <div class="record-body">
           <h3><a class="record-title" href="cases/marketing-measurement.html">анализ эффективности маркетинга</a> <span class="record-type"><span class="type-dot" aria-hidden="true">· </span>хакатон</span></h3>
-          <p class="record-summary">хакатон «Поступашек» · команда 5 человек · около 24 часов.
-                MVP системы измерения эффективности маркетинга: от рекламного размещения
-                и пользовательского касания до заявки, оплаты и ROMI.</p>
-          <p class="record-contribution"><strong>мой вклад:</strong> участие в проработке аналитической логики и подхода к анализу и классификации данных.</p><p class="stack-label">стек проекта</p><div class="tags"><span class="tag">Python</span>
-<span class="tag">Pandas</span>
-<span class="tag">SQLite</span>
-<span class="tag">Telegram bot</span>
-<span class="tag">EDA</span>
-<span class="tag">атрибуция</span>
-<span class="tag">ROMI</span>
-<span class="tag">классификация</span>
-<span class="tag">маркетинговая аналитика</span></div>
-          <p class="record-file">file_02 / marketing-measurement.html</p>
+          <p class="record-summary">Хакатон «Поступашек» · 5 человек · около 24 часов. Аналитика пути от рекламного контакта до заявки, оплаты и ROMI.</p>
+          <p class="record-contribution"><strong>Мой вклад:</strong> Участвовал в проработке аналитической логики, подхода к анализу и классификации данных.</p><p class="record-result"><strong>Результат:</strong> Команда создала рабочий MVP системы измерения эффективности маркетинга.</p><p class="stack-label">стек проекта</p><div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">SQLite</span><span class="tag">Telegram bot</span></div>
         </div>
         <div class="record-side">
-          <p>рабочий MVP</p>
-          <a class="text-link" href="cases/marketing-measurement.html">[open case <span class="arrow" aria-hidden="true">↗</span>]</a>
-          <a class="text-link" href="https://github.com/valentinesvev/marketing_attribution_system" target="_blank" rel="noreferrer">repository <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="text-link case-link" href="cases/marketing-measurement.html">Подробнее о проекте <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://github.com/valentinesvev/marketing_attribution_system" target="_blank" rel="noreferrer">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
         </div>
       </article>
       <article class="record" id="transport">
@@ -142,23 +114,12 @@
         </a>
         <div class="record-body">
           <h3><a class="record-title" href="cases/delay-prediction.html">прогноз задержек транспорта</a> <span class="record-type"><span class="type-dot" aria-hidden="true">· </span>хакатон</span></h3>
-          <p class="record-summary">хакатон Московского транспорта · команда 5 человек · 3 дня.
-                работающий прототип системы прогнозирования задержек автобусов
-                на остановках на 10–15 минут вперёд.</p>
-          <p class="record-contribution"><strong>мой вклад:</strong> финальное code review, проверка тестов и сквозной работоспособности перед сдачей.</p><p class="stack-label">стек проекта</p><div class="tags"><span class="tag">Python</span>
-<span class="tag">Docker</span>
-<span class="tag">FastAPI</span>
-<span class="tag">PyTorch</span>
-<span class="tag">SQLite</span>
-<span class="tag">ML</span>
-<span class="tag">тестирование</span>
-<span class="tag">code review</span></div>
-          <p class="record-file">file_03 / delay-prediction.html</p>
+          <p class="record-summary">Хакатон Московского транспорта · 5 человек · 3 дня. Прогнозирование задержек автобусов на остановках.</p>
+          <p class="record-contribution"><strong>Мой вклад:</strong> Провёл финальное code review, проверил тесты и сквозную работоспособность перед сдачей.</p><p class="record-result"><strong>Результат:</strong> Команда создала прототип с прогнозом задержек на 10–15 минут вперёд.</p><p class="stack-label">стек проекта</p><div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">PyTorch</span><span class="tag">SQLite</span><span class="tag">Docker</span></div>
         </div>
         <div class="record-side">
-          <p>прогноз 10–15 мин</p>
-          <a class="text-link" href="cases/delay-prediction.html">[open case <span class="arrow" aria-hidden="true">↗</span>]</a>
-          <a class="text-link" href="https://github.com/valentinesvev/delay_prediction_platform" target="_blank" rel="noreferrer">repository <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="text-link case-link" href="cases/delay-prediction.html">Подробнее о проекте <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://github.com/valentinesvev/delay_prediction_platform" target="_blank" rel="noreferrer">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
         </div>
       </article>
     </section>
@@ -196,7 +157,7 @@
       <div class="section-head"><h2><span class="section-number">04 /</span>обо мне</h2><span class="meta">about</span></div>
       <div class="info-grid">
         <p class="meta">statistics student / data analyst</p>
-        <div class="about-copy"><p>Развиваюсь в аналитике данных с опорой на статистику. Мне интересно разбираться в поведении пользователей, оценивать эффективность решений и находить закономерности в данных.</p><p>В исследованиях уделяю внимание качеству данных, выбору метрик и интерпретации результатов: выводы должны быть понятными и учитывать ограничения анализа.</p></div>
+<div class="about-copy"><p>Развиваюсь в аналитике данных с опорой на статистику. Мне интересно разбираться в поведении пользователей, оценивать эффективность решений и находить закономерности в данных.</p><p>В исследованиях уделяю внимание качеству данных, выбору метрик и интерпретации результатов: выводы должны быть понятными и учитывать ограничения анализа.</p></div>
       </div>
     </section>
 
