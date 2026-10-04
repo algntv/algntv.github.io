@@ -327,3 +327,43 @@ section { scroll-margin-top: 56px; }
   .print-plate figcaption { font-size: 7px; gap: 4px; }
   .print-plate figcaption span:last-child { display: none; }
 }
+
+/* Resume content: readable evidence and a compact mobile introduction. */
+.lead,.record-summary,.skill-group p,.case-content { font-size: 16px; }
+.record-contribution { margin: 13px 0 16px; font-size: 15px; line-height: 1.65; }
+.record-contribution strong { font-weight: 600; }
+.stack-label { margin: 0 0 5px; color: var(--secondary); font: 11px/1.6 var(--mono); }
+.skill-methods { margin-top: 27px; padding-top: 20px; border-top: 1px solid var(--rule); }
+.skill-methods h3 { margin: 0 0 9px; font: 12px/1.6 var(--mono); }
+.skill-methods p { margin: 0; color: var(--secondary); font-size: 16px; }
+.about-copy p + p { margin-top: 16px; }
+.case-content strong { font-weight: 600; }
+.case-note { margin-top: 20px !important; color: var(--secondary); font-size: 14px; }
+.case-content > p + p { margin-top: 16px; }
+.findings-list { line-height: 1.75; }
+.source-links { margin-top: 20px !important; font: 12px/1.8 var(--mono); }
+.evidence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 28px; }
+.evidence-grid figure,.evidence-single { margin: 0; min-width: 0; }
+.evidence-single { margin-top: 28px; }
+.evidence-grid img,.evidence-single img { display: block; width: 100%; height: auto; }
+.evidence-grid figcaption,.evidence-single figcaption { margin-top: 10px; color: var(--secondary); font: 11px/1.6 var(--mono); }
+.sql-example { margin-top: 20px; }
+.sql-example summary { cursor: pointer; min-height: 44px; padding: 10px 0; }
+.sql-example summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.sql-example pre { overflow-x: auto; max-width: 100%; padding: 16px; background: #f0f0eb; font: 12px/1.8 var(--mono); }
+.case-content { min-width: 0; }
+@media (max-width: 760px) {
+  .hero { display: flex; flex-direction: column; }
+  .hero-grid { display: contents; }
+  .hero-label { order: 0; }
+  .hero-grid > div { order: 1; }
+  .hero-foot { order: 2; margin-top: 24px; }
+  .quick-links { order: 3; }
+  .hero-file { order: 4; align-self: flex-end; margin-top: 24px; }
+  .archive-imprint { order: 5; }
+  .hero-foot .availability { display: none; }
+  .hero-role { font-size: 17px; }
+  .hero-file .work-label { margin-bottom: 0; }
+  .evidence-grid { grid-template-columns: 1fr; }
+  .lead,.record-summary,.skill-group p,.case-content { font-size: 15px; }
+}

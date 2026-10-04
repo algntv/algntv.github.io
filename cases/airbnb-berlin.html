@@ -22,7 +22,7 @@
     <nav class="masthead-tools" aria-label="навигация">
       <a class="index-link" href="../index.html#projects">[work]</a>
       <a href="../index.html#contacts">[contact]</a>
-      <span class="meta updated">updated / 03.10.26</span>
+      <span class="meta updated">updated / 04.10.26</span>
     </nav>
   </header>
   <main class="wrap" id="main">
@@ -47,16 +47,13 @@
     </figure>
     <section class="case-section"><h2>context / задача</h2><div class="case-content"><p>самостоятельный аналитический проект по исследованию факторов,
                 связанных со стоимостью объявлений Airbnb.</p></div></section>
-    <section class="case-section"><h2>data / данные</h2><div class="case-content"><p>14 274 объявления Airbnb в Берлине. район, тип жилья, вместимость, рейтинг и другие характеристики объявлений.</p></div></section>
-    <section class="case-section"><h2>process / работа</h2><div class="case-content"><ul><li>очистил и подготовил исходные данные;</li>
-<li>провёл EDA и визуализацию ключевых характеристик рынка;</li>
-<li>исследовал влияние района, типа жилья, вместимости, рейтинга и других факторов на цену;</li>
-<li>проверил восемь аналитических гипотез и сформулировал выводы о драйверах стоимости.</li></ul></div></section>
-    <section class="case-section"><h2>findings / результат</h2><div class="case-content"><p>проверены восемь аналитических гипотез и сформулированы выводы о драйверах стоимости.</p></div></section>
+    <section class="case-section"><h2>data / данные</h2><div class="case-content"><p>Inside Airbnb, Берлин, срез от 23 сентября 2025 года: 14 274 объявления и 79 признаков. Рабочая выборка — 9 171 объявление после предобработки; цены выше 99-го перцентиля (€617,37 за ночь) исключены. Исследованы тип жилья, район, вместимость, минимальный срок проживания и репутационные характеристики.</p></div></section>
+    <section class="case-section"><h2>process / работа</h2><div class="case-content"><ul><li>привёл цену к числовому формату и ограничил влияние дорогих выбросов;</li><li>сравнил распределения и средние цены по типам жилья и районам;</li><li>построил boxplot, диаграммы, scatter plot и корреляционную матрицу;</li><li>исследовал связь числовых характеристик с ценой с помощью корреляции Пирсона.</li></ul></div></section>
+    <section class="case-section"><h2>findings / результат</h2><div class="case-content"><ul class="findings-list"><li><strong>Тип жилья:</strong> средняя цена hotel room — €197, entire home/apt — €141, private room — €81, shared room — €48 за ночь.</li><li><strong>Район:</strong> средняя цена в Mitte — €146,6, в Reinickendorf — €87,4.</li><li><strong>Вместимость:</strong> корреляция с ценой — 0,59; для рейтинга — всего 0,03.</li><li><strong>Минимальный срок проживания:</strong> корреляция с ценой за ночь — −0,20.</li></ul><p class="case-note">Это разведочный анализ одного временного среза. Корреляции показывают связи, но не доказывают причинность. Следующий шаг — построить прогнозную модель и проверить её на отдельной выборке.</p><div class="evidence-grid"><figure><a href="../assets/projects/airbnb-districts.png" target="_blank" rel="noreferrer"><img src="../assets/projects/airbnb-districts.png" alt="Средние цены Airbnb по районам Берлина" loading="lazy"></a><figcaption>средняя цена по районам</figcaption></figure><figure><a href="../assets/projects/airbnb-correlations.png" target="_blank" rel="noreferrer"><img src="../assets/projects/airbnb-correlations.png" alt="Корреляционная матрица признаков Airbnb" loading="lazy"></a><figcaption>связи числовых признаков с ценой</figcaption></figure></div><p class="source-links">Материалы: <a href="https://github.com/algntv/airbnb-berlin-price-drivers/blob/main/airbnb_berlin_eda.ipynb" target="_blank" rel="noreferrer">ноутбук ↗</a> · <a href="https://github.com/algntv/airbnb-berlin-price-drivers#ключевые-выводы" target="_blank" rel="noreferrer">результаты и методика ↗</a></p></div></section>
     <section class="case-section"><h2>tools / инструменты</h2><div class="case-content"><div class="tags"><span class="tag">Python</span>
 <span class="tag">Pandas</span>
 <span class="tag">NumPy</span>
-<span class="tag">Matplotlib</span>
+<span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
 <span class="tag">Jupyter Notebook</span>
 <span class="tag">EDA</span>
 <span class="tag">очистка данных</span>
@@ -71,7 +68,7 @@
     <div class="footer-register" aria-hidden="true"><img src="../assets/graphics/barcode.svg" alt="" width="87" height="48" style="width:87px;height:48px"><span class="registration-cross">+</span><span class="footer-stamp">algntv<br>2024 / 26</span></div>
 
     <p class="meta">© 2026 Александр Игнатьев</p>
-    <p class="meta">last updated: <time datetime="2026-10-03">03.10.26</time> / Санкт-Петербург</p>
+    <p class="meta">last updated: <time datetime="2026-10-04">04.10.26</time> / Санкт-Петербург</p>
   </footer>
 </body>
 </html>
