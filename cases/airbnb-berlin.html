@@ -6,7 +6,7 @@
   <meta name="description" content="Александр Игнатьев — начинающий аналитик данных. Python, SQL, Excel, Tableau и DataLens.">
   <title>анализ рынка краткосрочной аренды в Берлине — case file — Александр Игнатьев</title>
   <link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="../assets/archive.css">
+  <link rel="stylesheet" href="../assets/archive.css?v=20261004-2">
 </head>
 <body>
   <div class="folio-ruler" aria-hidden="true"><img src="../assets/graphics/ruler.svg" alt="" width="38" height="616"></div>
@@ -32,25 +32,26 @@
         
       </div>
       <h1>анализ рынка краткосрочной аренды в Берлине</h1>
-      <p class="meta case-type">pet-project / 14 274 объявления</p>
+      <p class="case-intro">Самостоятельное исследование: какие характеристики жилья связаны с ценой аренды и что можно понять о рынке из объявлений Airbnb.</p>
+      <p class="meta case-type">самостоятельный проект / исследование данных</p>
     </div>
     <div class="case-meta">
-      <dl><dt>type</dt><dd>pet-project</dd></dl>
-      <dl><dt>role</dt><dd>самостоятельный аналитический проект</dd></dl>
-      <dl><dt>stack</dt><dd>Python / Pandas / NumPy / Matplotlib</dd></dl>
+      <dl><dt>формат</dt><dd>самостоятельный проект</dd></dl>
+      <dl><dt>мой вклад</dt><dd>весь цикл исследования</dd></dl>
+      <dl><dt>инструменты</dt><dd>Python / Pandas / NumPy / Matplotlib</dd></dl>
     </div>
-    <figure class="case-visual">
+    <section class="case-section"><h2>Задача</h2><div class="case-content"><p>Понять, почему цены аренды в Берлине различаются: как с ними связаны тип жилья, район, вместимость и отзывы. Важно было сравнить разные сегменты рынка, чтобы общая средняя цена не скрывала различия между ними.</p></div></section>
+    <section class="case-section"><h2>Решение</h2><div class="case-content"><p>Подготовил данные: привёл цены к числовому формату и исключил самые дорогие объявления, которые могли непропорционально влиять на средние значения.</p><p>Сравнил цены внутри понятных групп — по типу жилья и району. Проверил связь цены с числовыми характеристиками и показал результаты на графиках.</p></div></section>
+    <section class="case-section"><h2>Мой вклад</h2><div class="case-content"><p>Выполнил исследование самостоятельно: от подготовки данных и выбора сравнений до визуализации и интерпретации результатов.</p></div></section>
+    <section class="case-section"><h2>Выводы</h2><div class="case-content"><ul class="findings-list"><li><strong>Сегмент важнее общей средней.</strong> Отдельная комната, целая квартира и гостиничный номер относятся к разным ценовым категориям. Их стоит сравнивать отдельно.</li><li><strong>Расположение связано с ценой.</strong> В центральном Mitte средняя цена выше, чем в Reinickendorf. Поэтому оценку объявления полезно начинать с сопоставимого района и типа жилья.</li><li><strong>Вместимость связана с ценой заметнее, чем рейтинг.</strong> В этой выборке цена сильнее связана с количеством гостей, которых может принять жильё. По одному рейтингу объяснить различия в цене не получится.</li></ul><p>Результат — описание закономерностей в конкретном срезе рынка. Оно помогает выбрать признаки для дальнейшего исследования, но не доказывает, что отдельный признак вызывает рост цены, и не заменяет модель оценки стоимости.</p></div></section>
+    <section class="case-section"><h2>Материалы</h2><div class="case-content"><details class="case-details"><summary>Данные, графики и численные результаты</summary><div class="case-detail-body">    <figure class="case-material-visual">
       <a href="../assets/projects/airbnb-room-types.png" target="_blank" rel="noreferrer" aria-label="открыть оригинальный визуал проекта">
         <img src="../assets/projects/airbnb-room-types.png" alt="распределение цен / Airbnb" width="1764" height="1007" decoding="async">
       </a>
       <figcaption class="meta">fig_01 / распределение цен / Airbnb / <a href="https://github.com/algntv/airbnb-berlin-price-drivers" target="_blank" rel="noreferrer">project source ↗</a></figcaption>
     </figure>
-    <section class="case-section"><h2>context / задача</h2><div class="case-content"><p>самостоятельный аналитический проект по исследованию факторов,
-                связанных со стоимостью объявлений Airbnb.</p></div></section>
-    <section class="case-section"><h2>data / данные</h2><div class="case-content"><p>Inside Airbnb, Берлин, срез от 23 сентября 2025 года: 14 274 объявления и 79 признаков. Рабочая выборка — 9 171 объявление после предобработки; цены выше 99-го перцентиля (€617,37 за ночь) исключены. Исследованы тип жилья, район, вместимость, минимальный срок проживания и репутационные характеристики.</p></div></section>
-    <section class="case-section"><h2>process / работа</h2><div class="case-content"><ul><li>привёл цену к числовому формату и ограничил влияние дорогих выбросов;</li><li>сравнил распределения и средние цены по типам жилья и районам;</li><li>построил boxplot, диаграммы, scatter plot и корреляционную матрицу;</li><li>исследовал связь числовых характеристик с ценой с помощью корреляции Пирсона.</li></ul></div></section>
-    <section class="case-section"><h2>findings / результат</h2><div class="case-content"><ul class="findings-list"><li><strong>Тип жилья:</strong> средняя цена hotel room — €197, entire home/apt — €141, private room — €81, shared room — €48 за ночь.</li><li><strong>Район:</strong> средняя цена в Mitte — €146,6, в Reinickendorf — €87,4.</li><li><strong>Вместимость:</strong> корреляция с ценой — 0,59; для рейтинга — всего 0,03.</li><li><strong>Минимальный срок проживания:</strong> корреляция с ценой за ночь — −0,20.</li></ul><p class="case-note">Это разведочный анализ одного временного среза. Корреляции показывают связи, но не доказывают причинность. Следующий шаг — построить прогнозную модель и проверить её на отдельной выборке.</p><div class="evidence-grid"><figure><a href="../assets/projects/airbnb-districts.png" target="_blank" rel="noreferrer"><img src="../assets/projects/airbnb-districts.png" alt="Средние цены Airbnb по районам Берлина" loading="lazy"></a><figcaption>средняя цена по районам</figcaption></figure><figure><a href="../assets/projects/airbnb-correlations.png" target="_blank" rel="noreferrer"><img src="../assets/projects/airbnb-correlations.png" alt="Корреляционная матрица признаков Airbnb" loading="lazy"></a><figcaption>связи числовых признаков с ценой</figcaption></figure></div><p class="source-links">Материалы: <a href="https://github.com/algntv/airbnb-berlin-price-drivers/blob/main/airbnb_berlin_eda.ipynb" target="_blank" rel="noreferrer">ноутбук ↗</a> · <a href="https://github.com/algntv/airbnb-berlin-price-drivers#ключевые-выводы" target="_blank" rel="noreferrer">результаты и методика ↗</a></p></div></section>
-    <section class="case-section"><h2>tools / инструменты</h2><div class="case-content"><div class="tags"><span class="tag">Python</span>
+<h3>Исходные данные</h3><p>Inside Airbnb, Берлин, срез от 23 сентября 2025 года: 14 274 объявления и 79 признаков. Рабочая выборка — 9 171 объявление после предобработки; цены выше 99-го перцентиля (€617,37 за ночь) исключены. Исследованы тип жилья, район, вместимость, минимальный срок проживания и репутационные характеристики.</p><h3>Результаты анализа</h3><ul class="findings-list"><li><strong>Тип жилья:</strong> средняя цена hotel room — €197, entire home/apt — €141, private room — €81, shared room — €48 за ночь.</li><li><strong>Район:</strong> средняя цена в Mitte — €146,6, в Reinickendorf — €87,4.</li><li><strong>Вместимость:</strong> корреляция с ценой — 0,59; для рейтинга — всего 0,03.</li><li><strong>Минимальный срок проживания:</strong> корреляция с ценой за ночь — −0,20.</li></ul><p class="case-note">Это разведочный анализ одного временного среза. Корреляции показывают связи, но не доказывают причинность. Следующий шаг — построить прогнозную модель и проверить её на отдельной выборке.</p><div class="evidence-grid"><figure><a href="../assets/projects/airbnb-districts.png" target="_blank" rel="noreferrer"><img src="../assets/projects/airbnb-districts.png" alt="Средние цены Airbnb по районам Берлина" loading="lazy"></a><figcaption>средняя цена по районам</figcaption></figure><figure><a href="../assets/projects/airbnb-correlations.png" target="_blank" rel="noreferrer"><img src="../assets/projects/airbnb-correlations.png" alt="Корреляционная матрица признаков Airbnb" loading="lazy"></a><figcaption>связи числовых признаков с ценой</figcaption></figure></div><p class="source-links">Материалы: <a href="https://github.com/algntv/airbnb-berlin-price-drivers/blob/main/airbnb_berlin_eda.ipynb" target="_blank" rel="noreferrer">ноутбук ↗</a> · <a href="https://github.com/algntv/airbnb-berlin-price-drivers#ключевые-выводы" target="_blank" rel="noreferrer">результаты и методика ↗</a></p></div></details></div></section>
+    <section class="case-section"><h2>Инструменты</h2><div class="case-content"><div class="tags"><span class="tag">Python</span>
 <span class="tag">Pandas</span>
 <span class="tag">NumPy</span>
 <span class="tag">Matplotlib</span><span class="tag">Seaborn</span>
@@ -60,7 +61,7 @@
 <span class="tag">визуализация</span></div></div></section>
     <nav class="case-navigation" aria-label="навигация по проектам">
       <a class="text-link" href="https://github.com/algntv/airbnb-berlin-price-drivers" target="_blank" rel="noreferrer">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
-      <a class="text-link" href="marketing-measurement.html">next file / 02 <span class="arrow" aria-hidden="true">↗</span></a>
+      <a class="text-link" href="marketing-measurement.html">следующий проект <span class="arrow" aria-hidden="true">↗</span></a>
       <a class="text-link" href="../index.html#projects">← все проекты</a>
     </nav>
   </main>
